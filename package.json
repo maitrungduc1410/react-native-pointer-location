@@ -1,0 +1,118 @@
+{
+  "name": "react-native-pointer-location",
+  "version": "1.0.0",
+  "description": "show pointer location + tap",
+  "main": "./lib/module/index.js",
+  "types": "./lib/typescript/src/index.d.ts",
+  "exports": {
+    ".": {
+      "source": "./src/index.tsx",
+      "types": "./lib/typescript/src/index.d.ts",
+      "default": "./lib/module/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "ios",
+    "cpp",
+    "*.podspec",
+    "react-native.config.js",
+    "!ios/build",
+    "!android/build",
+    "!android/gradle",
+    "!android/gradlew",
+    "!android/gradlew.bat",
+    "!android/local.properties",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*"
+  ],
+  "scripts": {
+    "example": "yarn workspace react-native-pointer-location-example",
+    "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
+    "prepare": "bob build",
+    "typecheck": "tsc"
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maitrungduc1410/react-native-pointer-location.git"
+  },
+  "author": "Duc Trung Mai <maitrungduc1410@gmail.com> (https://github.com/maitrungduc1410)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maitrungduc1410/react-native-pointer-location/issues"
+  },
+  "homepage": "https://github.com/maitrungduc1410/react-native-pointer-location#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^20.5.0",
+    "@react-native/babel-preset": "0.85.0",
+    "@types/react": "^19.2.0",
+    "commitlint": "^20.5.0",
+    "del-cli": "^7.0.0",
+    "lefthook": "^2.1.4",
+    "react": "19.2.3",
+    "react-native": "0.85.0",
+    "react-native-builder-bob": "^0.41.0",
+    "turbo": "^2.8.21",
+    "typescript": "^6.0.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "workspaces": [
+    "example"
+  ],
+  "packageManager": "yarn@4.11.0",
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      [
+        "module",
+        {
+          "esm": true
+        }
+      ],
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  },
+  "codegenConfig": {
+    "name": "PointerLocationSpec",
+    "type": "modules",
+    "jsSrcsDir": "src",
+    "android": {
+      "javaPackageName": "com.pointerlocation"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "create-react-native-library": {
+    "type": "turbo-module",
+    "languages": "kotlin-objc",
+    "tools": [
+      "lefthook"
+    ],
+    "version": "0.61.0"
+  }
+}
