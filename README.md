@@ -118,17 +118,11 @@ No configuration needed — it auto-detects the architecture at runtime.
 
 ## How It Works
 
-### Android
-1. `PointerLocationModule` receives JS calls and dispatches to `PointerLocationManager` on the UI thread
-2. `PointerLocationManager` injects a `PointerLocationOverlayView` into the Activity's `DecorView`
-3. A `Window.Callback` wrapper intercepts `dispatchTouchEvent` to forward `MotionEvent` data to the overlay
-4. `PointerLocationOverlayView` draws everything using Android's `Canvas` API in `onDraw`
+See [ARCHITECTURE.md](./ARCHITECTURE.md) for a deep dive into the overlay mechanism, touch interception strategy, drawing pipeline, and cross-platform differences.
 
-### iOS
-1. `PointerLocation.mm` bridges JS calls to the Swift `PointerLocationManager` via the main queue
-2. `PointerLocationManager` creates a `PointerLocationOverlayWindow` with a high `windowLevel`
-3. Method swizzling on `UIApplication.sendEvent(_:)` intercepts all touch events globally
-4. `PointerLocationDrawingView` draws everything using Core Graphics in `draw(_:)`
+## Contributing
+
+See [LESSONS_LEARNED.md](./LESSONS_LEARNED.md) for real bugs we encountered during development and strategies to avoid them. Recommended reading before making changes to the native code.
 
 ## License
 

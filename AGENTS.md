@@ -62,6 +62,17 @@ ios/
 - Android: Uses `WindowInsets` API (`systemBars | displayCutout`) to position the data bar below the status bar/notch. Re-requests insets on size change.
 - iOS: Uses `safeAreaInsets.top`. Overrides `safeAreaInsetsDidChange()` and `bounds` setter to handle rotation.
 
+## Required Reading
+
+- **[ARCHITECTURE.md](./ARCHITECTURE.md)** — How the overlay, touch interception, drawing pipeline, and dual-arch support work. Read before making structural changes.
+- **[LESSONS_LEARNED.md](./LESSONS_LEARNED.md)** — Real bugs encountered during development with root causes and fixes. **Read this before modifying native code** to avoid repeating known mistakes. Key pitfalls:
+  - VelocityTracker must be read before recycle() (Android)
+  - iOS has no finger orientation or pressure on modern devices — hide features, don't fake them
+  - Use WindowInsets / safeAreaInsets for safe area — never hardcode
+  - Use UIViewController for iOS rotation callbacks, not UIWindow.layoutSubviews
+  - Kotlin `return` is prohibited inside `by` delegation object expressions
+  - Cross-platform value normalization requires empirical calibration (iOS majorRadius / 400 ≈ Android getSize)
+
 ## Testing
 
 Run the example app:
