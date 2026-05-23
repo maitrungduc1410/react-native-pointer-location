@@ -120,9 +120,15 @@ No configuration needed — it auto-detects the architecture at runtime.
 
 See [ARCHITECTURE.md](./ARCHITECTURE.md) for a deep dive into the overlay mechanism, touch interception strategy, drawing pipeline, and cross-platform differences.
 
+## Lessons Learned
+
+See [LESSONS_LEARNED.md](./LESSONS_LEARNED.md) for real bugs we encountered during development — VelocityTracker gotchas, iOS platform limitations, safe area pitfalls, and more. Recommended reading before making changes to the native code.
+
 ## Contributing
 
-See [LESSONS_LEARNED.md](./LESSONS_LEARNED.md) for real bugs we encountered during development and strategies to avoid them. Recommended reading before making changes to the native code.
+- [Development workflow](CONTRIBUTING.md#development-workflow)
+- [Sending a pull request](CONTRIBUTING.md#sending-a-pull-request)
+- [Code of conduct](CODE_OF_CONDUCT.md)
 
 ## License
 
