@@ -4,6 +4,8 @@ A React Native library that replicates Android's built-in **"Show Taps"** and **
 
 All drawing and touch interception happens entirely in native code (Kotlin/Swift) via a global overlay — no Fabric Views, no JS bridge overhead. The overlay is non-interactive: all touches pass through to your app.
 
+Works with bare React Native and **Expo** (via a [development build](https://docs.expo.dev/develop/development-builds/introduction/) — not Expo Go), on both the old and new architectures. No manual native setup or config plugin required.
+
 ## Demo
 
 | Show Taps | Pointer Location |
@@ -56,6 +58,25 @@ cd ios && pod install
 ### Android
 
 No additional setup needed — auto-linking handles everything.
+
+### Expo
+
+This library includes custom native code, so it **does not work in Expo Go**. Use an [Expo development build](https://docs.expo.dev/develop/development-builds/introduction/) instead.
+
+```bash
+npx expo install react-native-pointer-location
+```
+
+Then generate the native projects and run a development build:
+
+```bash
+npx expo prebuild
+npx expo run:ios
+# or
+npx expo run:android
+```
+
+No config plugin is required — the module is autolinked and self-installing (no `Info.plist`, `AndroidManifest`, `AppDelegate`, or `MainApplication` changes needed).
 
 ## Usage
 
