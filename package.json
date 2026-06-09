@@ -1,7 +1,7 @@
 {
   "name": "react-native-pointer-location",
-  "version": "1.0.0",
-  "description": "show pointer location + tap",
+  "version": "1.0.1",
+  "description": "Replicates Android's \"Show Taps\" and \"Pointer Location\" developer options on Android and iOS. Native global touch overlay with pass-through touches, crosshairs, gesture paths and real-time touch metrics.",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
   "exports": {
@@ -40,7 +40,27 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "expo",
+    "turbo-module",
+    "turbomodule",
+    "fabric",
+    "new-architecture",
+    "show-taps",
+    "pointer-location",
+    "pointer",
+    "touch",
+    "tap",
+    "taps",
+    "touch-overlay",
+    "touch-indicator",
+    "touch-visualizer",
+    "gesture",
+    "crosshair",
+    "developer-tools",
+    "debugging",
+    "overlay",
+    "native-overlay"
   ],
   "repository": {
     "type": "git",
